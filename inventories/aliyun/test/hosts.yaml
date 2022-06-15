@@ -1,0 +1,10 @@
+all:
+  children:
+    test:
+      children:
+        london:
+          hosts:
+            8.208.85.230:
+        frankfurt:
+          hosts:
+            8.209.73.135:

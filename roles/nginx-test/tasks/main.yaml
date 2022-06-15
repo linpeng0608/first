@@ -1,0 +1,23 @@
+- name: install nginx
+  yum:
+    name: nginx
+    state: present
+    update_cache: true
+  when: ansible_os_family == "RedHat" and ansible_system_vendor != "Alibaba Cloud"
+- name: install nginx
+  dnf:
+    name: nginx
+    state: present
+    update_cache: true
+  when: ansible_system_vendor == "Alibaba Cloud"
+
+- name: start nginx
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+- name: init test data
+  command: "{{ item  }}"
+  loop:
+    - dd if=/dev/urandom of=/usr/share/nginx/html/128k bs=1K count=128
+    - dd if=/dev/urandom of=/usr/share/nginx/html/1k bs=1K count=1
