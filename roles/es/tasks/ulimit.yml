@@ -1,0 +1,10 @@
+- name: copy shell
+  copy: src=ulimit.sh dest=/opt/ owner=root
+- name: ulimit
+  shell: /bin/bash /opt/ulimit.sh
+- name: copy source
+  copy: src=source.sh dest=/opt/ owner=root
+- name: source
+  shell: source /etc/profile; source ~/.bash_profile
+  register: output
+- debug: msg="{{ output }}"

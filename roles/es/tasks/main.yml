@@ -1,0 +1,8 @@
+- include: user.yml
+- include: hostname.yml
+- include: yum.yml
+- include: ulimit.yml
+- include: cp_elasticsearch.yml
+- include: cp_conf.yml
+- include: mkdir.yml
+- include: start_es.yml

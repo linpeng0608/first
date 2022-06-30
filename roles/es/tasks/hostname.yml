@@ -1,0 +1,2 @@
+- name: hostname
+  hostname: name=logger-es-01

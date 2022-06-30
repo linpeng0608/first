@@ -1,0 +1,4 @@
+- name: copy_mkdir.sh
+  copy: src=mkdir_es_data.sh dest=/opt/
+- name: mkdir
+  shell: /bin/bash /opt/mkdir_es_data.sh

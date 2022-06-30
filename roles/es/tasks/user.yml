@@ -1,0 +1,4 @@
+- name: create group
+  group: name=es gid=1000
+- name: create user
+  user: name=es uid=1000 group=es
